@@ -14,10 +14,10 @@ func NewImageService(helpers helpers.ImgHelperService) *Image {
 }
 
 type ImageService interface {
-	UpsideDown() error
+	Invert() error
 }
 
-func (i *Image) UpsideDown() error {
+func (i *Image) Invert() error {
 
 	img, err := i.Helpers.LoadImage()
 	if err != nil {
@@ -30,7 +30,7 @@ func (i *Image) UpsideDown() error {
 	row := len(pixels)
 
 	for i := 0; i < row; i++ {
-		
+
 		col := pixels[i]
 
 		si := len(col)

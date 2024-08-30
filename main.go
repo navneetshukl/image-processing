@@ -9,5 +9,5 @@ func main() {
 	imgHelperService := helpers.NewImgHelper("./images/image1.jpg")
 	imageService := service.NewImageService(imgHelperService)
 
-	imageService.UpsideDown()
+	imageService.Invert()
 }
