@@ -12,6 +12,8 @@ func main() {
 	imageService := service.NewImageService(imgUtilsService, helperService)
 
 	//imageService.Invert()
-	imageService.RotateBy90D()
-	imageService.RotateBy270D()
+	// imageService.RotateBy90D()
+	// imageService.RotateBy270D()
+
+	imageService.GreyScale()
 }

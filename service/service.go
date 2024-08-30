@@ -80,3 +80,24 @@ func (i *Image) RotateBy270D() error {
 	}
 	return nil
 }
+
+
+func(i *Image)GreyScale() error{
+	img, err := i.Utils.LoadImage()
+    if err!= nil {
+        log.Println("error in loading the image ", err)
+        return err
+    }
+
+    pixels := i.Utils.ConvertToTensor(img)
+
+	newPixels:=i.Helpers.GreyScale(pixels)
+	err=i.Utils.CreateNewImage("grey",newPixels)
+	if err!= nil {
+        log.Println("error in creating new greyscale image ", err)
+        return err
+    }
+
+
+    return nil
+}
